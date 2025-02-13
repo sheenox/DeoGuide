@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annex - Aklan Catholic College</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 100px;
+            background-image: url('assets/deologo.png'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        img {
+            width: 150px;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fcfcfc;
+        }
+        #iframe-container {
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 650px;
+            border: 0;
+        }
+        .Back {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dropdown Menu -->
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <div class="dropdown" id="dropdownMenu">
+        <a href="minigames.html">MINI Games</a>
+        <a href="history.html">History</a>
+        <a href="map.html">Map</a>
+        <a href="AboutUs.html">About Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <img src="assets/logo.png" alt="Aklan Catholic College Logo">
+    <h1>Annex Campus Map</h1>
+    <div id="iframe-container">
+        <iframe src="https://app.mappedin.com/map/675e9c61813f73000b1a8149?embedded=true" 
+                title="Mappedin Map"
+                name="Mappedin Map" 
+                scrolling="no">
+        </iframe>
+    </div>
+    
+    <br>
+    <button class="Back" onclick="history.back()">Back</button>
+
+    <script>
+        // Function to toggle the dropdown menu
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            dropdownMenu.style.display = (dropdownMenu.style.display === "block") ? "none" : "block";
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    if (!event.target.closest('.menu') && !event.target.closest('.dropdown')) {
+        dropdownMenu.style.display = "none";
+    }
+};
+
+    </script>
+</body>
+</html>

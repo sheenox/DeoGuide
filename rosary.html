@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosary Prayer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('assets/deologo.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(6px);
+    }
+    h1 {
+      color: #ffffff;
+      text-shadow: 2px 2px 5px rgba(224, 230, 225, 0.5);
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 4px 8px rgba(252, 249, 249, 0.3);
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 150px;
+      height: auto;
+    }
+    .mystery {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #000000;
+      color: rgb(72, 155, 116);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #65b35691;
+    }
+    .rosary-step {
+      font-size: 1.3rem;
+      color: lightblue;
+    }
+    .back-button {
+      padding: 10px 20px;
+      background-color: #698a7b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #000000;
+    }
+    .menu {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+      background: none;
+      border: none;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .dropdown a {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .dropdown a:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+  <div class="dropdown" id="dropdownMenu">
+    <a href="minigames.html">MINI Games</a>
+    <a href="history.html">History</a>
+    <a href="map.html">Map</a>
+    <a href="AboutUs.html">About Us</a>
+  </div>
+
+  <div class="content">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Game Logo">
+    </div>
+
+    <h1>Rosary Prayer</h1>
+    <p>Learn how to pray the Rosary by completing each prayer and meditating on the mysteries of Jesus' life.</p>
+
+    <div id="game-container">
+      <div id="mystery-container" class="mystery">
+        <h2>Starting with: <span id="mystery-name">Joyful Mysteries</span></h2>
+        <p id="mystery-description">The First Joyful Mystery: The Annunciation - The Angel Gabriel announces to Mary that she will give birth to Jesus.</p>
+      </div>
+
+      <div id="prayer-container">
+        <p class="prayer-step" id="prayer-step">Our Father</p>
+        <p class="prayer-text" id="prayer-text">Our Father, who art in heaven, hallowed be thy name...</p>
+        <button id="next-prayer" onclick="nextPrayer()">Next Prayer</button>
+      </div>
+      <div class="rosary-step" id="rosary-progress">Decade 1: Prayer 1 of 12</div>
+    </div>
+    <button class="back-button" onclick="history.back()">Back</button>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    }
+    const prayers = [
+      { step: "Our Father", text: "Our Father, who art in heaven, hallowed be thy name..." },
+      { step: "Hail Mary", text: "Hail Mary, full of grace, the Lord is with thee..." },
+      { step: "Gloria Patri", text: "Glory be to the Father, and to the Son, and to the Holy Spirit..." }
+    ];
+    let currentPrayer = 0;
+    function nextPrayer() {
+      if (currentPrayer < prayers.length) {
+        document.getElementById('prayer-step').innerText = prayers[currentPrayer].step;
+        document.getElementById('prayer-text').innerText = prayers[currentPrayer].text;
+        document.getElementById('rosary-progress').innerText = `Prayer ${currentPrayer + 1} of ${prayers.length}`;
+        currentPrayer++;
+      } else {
+        document.getElementById('game-container').innerHTML = "<h2>You've completed the Rosary! Well done!</h2>";
+      }
+    }
+  </script>
+</body>
+</html>

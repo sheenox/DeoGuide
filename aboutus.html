@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aklan Catholic College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-image: url('assets/deologo.png'); /* Adding the background image */
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #000000;
+        }
+        h2 {
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #fffcfc;
+        }
+        .button {
+            padding: 15px 15px;
+            background-color: #698a7b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color:#000000;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .Back {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* Hamburger Menu Styles */
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+            background: none;
+            border: none;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dropdown a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            background-color: #555;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            padding: 10px 20px;
+            background-color: #698a7b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #000000;
+        }
+        .back-button:active {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu -->
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <div class="dropdown" id="dropdownMenu">
+        <a href="minigames.html">MINI Games</a>
+        <a href="history.html">History</a>
+        <a href="map.html">Map</a>
+        <a href="aboutus.html">About Us</a> <!-- Make sure filename matches exactly -->
+    </div>
+
+    <!-- Logo -->
+    <img src="assets/logo.png" alt="Aklan Catholic College Logo" class="logo">
+
+    <h1>About Us</h1>
+
+
+    
+    <p>Deo - Your Guide Buddy for Aklan Catholic College is an innovative web application designed to enhance the academic and campus experience for all students of Aklan Catholic College (ACC). This platform acts as a digital companion, offering an interactive map of the campus that helps students navigate through the ACC Main and ACC Annex buildings with ease. In addition to providing a map, Deo integrates educational resources that promote academic growth, including study materials, links to important academic announcements, and access to online courses and resources available at the college. It also features a historical tour of the college, offering students a deeper understanding of the institution’s rich legacy and the values that ACC upholds, such as integrity, faith, and service to the community.</p>
+
+    <p>Deo serves as more than just a navigation tool; it is a full-fledged guide that fosters personal development. It includes motivational scripture verses, inspirational quotes, and wellness tips that aim to support the mental and emotional well-being of students. Additionally, it provides important information about college events, student services, and the various clubs and organizations that help shape the student community. By using augmented reality (AR) technology, Deo enhances the experience by allowing students to interact with different parts of the campus in exciting and engaging ways. Through these features, Deo seeks to create a supportive, informative, and engaging environment for students, promoting their academic success, personal growth, and social connections.</p>
+
+    <p>With Deo, Aklan Catholic College is embracing the future of education by integrating technology to improve the learning experience. The platform is designed to be user-friendly and accessible to students at all levels, whether they are new to the campus or returning for another academic year. By incorporating historical context, religious insights, and a wealth of academic resources, Deo is more than just a digital tool—it is an essential companion in the students’ journey at Aklan Catholic College. Our goal is to empower students to make the most of their time at ACC and to equip them with the tools they need to succeed both inside and outside the classroom.</p>
+
+
+
+    <a href="index.html" class="button">Back to Home</a>
+
+    <!-- JavaScript for Dropdown Menu -->
+    <script>
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        }
+
+        // Close the dropdown only when clicking outside of menu
+        document.addEventListener("click", function(event) {
+            const menuButton = document.querySelector(".menu");
+            const dropdownMenu = document.getElementById("dropdownMenu");
+
+            if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

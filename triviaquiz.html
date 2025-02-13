@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aklan Catholic College Trivia</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('assets/deologo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        h1 {
+            color: #add6c4;
+            font-size: 28px;
+        }
+        .question {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+        .options button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #23684d, #66c78f);
+            border: none;
+            color: white;
+            border-radius: 30px;
+            width: 180px;
+            height: 50px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            font-weight: bold;
+        }
+        .options button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #000000, #000000);
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #ffffff;
+        }
+        .explanation {
+            font-size: 18px;
+            color: #fdfdfd;
+            margin-top: 15px;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #23684d;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+        .Back {
+            background-color: #000000;
+            color: white;
+        }
+
+        /* Hamburger Menu Styles */
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+            background: none;
+            border: none;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dropdown a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .dropdown a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <div class="dropdown" id="dropdownMenu">
+        <a href="minigames.html">MINI Games</a>
+        <a href="history.html">History</a>
+        <a href="map.html">Map</a>
+        <a href="AboutUs.html">About Us</a>
+    </div>
+    </style>
+</head>
+<body>
+    <h1>Aklan Catholic College Trivia</h1>
+    <div id="quiz-container">
+        <p class="question" id="question">Loading question...</p>
+        <div class="options" id="options"></div>
+        <p id="score">Score: 0</p>
+        <p class="explanation" id="explanation"></p>
+    </div>
+>
+<br><br>
+
+ <br><br>
+ <button class="back-button" onclick="history.back()">Back</button>
+ <style>
+     .back-button {
+         padding: 10px 20px;
+         background-color: #698a7b; /* Initial background color */
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 16px;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+     }
+ 
+     .back-button:hover {
+         background-color: #000000; /* Lighter color on hover */
+     }
+ 
+     .back-button:active {
+         background-color: #000000; /* Turns black when clicked */
+     }
+</style>
+<script>
+    // Function to toggle the dropdown menu
+    function toggleMenu() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+        } else {
+            dropdownMenu.style.display = "block";
+        }
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.menu')) {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            if (dropdownMenu.style.display === "block") {
+                dropdownMenu.style.display = "none";
+            }
+        }
+    };
+</script>
+    <script>
+        const questions = [
+            { 
+                question: "In what year was Aklan Catholic College founded?", 
+                options: ["A. 1945", "B. 1957", "C. 1962", "D. 1975"], 
+                answer: 2, 
+                explanation: "Aklan Catholic College was founded in 1962." 
+            },
+            { 
+                question: "What is the official motto of Aklan Catholic College?", 
+                options: ["A. Faith, Excellence, and Service", "B. Knowledge, Discipline, and Integrity", "C. Truth, Love, and Justice", "D. Wisdom, Compassion, and Strength"], 
+                answer: 0, 
+                explanation: "The official motto of Aklan Catholic College is 'Faith, Excellence, and Service'." 
+            },
+            { 
+                question: "What year was Aklan Catholic College founded?", 
+                options: ["1940", "1948", "1955", "1960"], 
+                answer: 1, 
+                explanation: "Aklan Catholic College was founded in 1948." 
+            },
+            { 
+                question: "Who is the founder of Aklan Catholic College?", 
+                options: ["St. Vincent Ferrer", "St. Augustine", "St. Thomas Aquinas", "St. Ignatius of Loyola"], 
+                answer: 0, 
+                explanation: "The founder of Aklan Catholic College is St. Vincent Ferrer." 
+            },
+            { 
+                question: "What is the motto of Aklan Catholic College?", 
+                options: ["Faith, Service, Excellence", "Truth, Charity, Fortitude", "Love, Hope, Faith", "Wisdom, Knowledge, Virtue"], 
+                answer: 1, 
+                explanation: "The motto of Aklan Catholic College is 'Truth, Charity, Fortitude'." 
+            },
+            { 
+                question: "What is the official school color of ACC?", 
+                options: ["Blue and White", "Red and Yellow", "Green and Gold", "Black and White"], 
+                answer: 0, 
+                explanation: "The official school color of ACC is Blue and White." 
+            },
+            { 
+                question: "Which saint is the patron of Aklan Catholic College?", 
+                options: ["St. Vincent Ferrer", "St. Joseph", "St. Peter", "St. Paul"], 
+                answer: 0, 
+                explanation: "The patron saint of Aklan Catholic College is St. Vincent Ferrer." 
+            },
+            { 
+                question: "What is the name of the ACC school hymn?", 
+                options: ["ACC Alma Mater", "Hail to ACC", "Song of Truth", "Ode to ACC"], 
+                answer: 0, 
+                explanation: "The name of the ACC school hymn is 'ACC Alma Mater'." 
+            },
+            { 
+                question: "What is the name of the ACC student publication?", 
+                options: ["The Aklan Collegian", "The ACC Gazette", "The Vincentian", "The Blue and White"], 
+                answer: 2, 
+                explanation: "The name of the ACC student publication is 'The Vincentian'." 
+            },
+            { 
+                question: "What is the name of the ACC gymnasium?", 
+                options: ["St. Vincent Gym", "ACC Sports Complex", "Blue Eagle Gym", "Vincentian Gym"], 
+                answer: 0, 
+                explanation: "The name of the ACC gymnasium is 'St. Vincent Gym'." 
+            },
+            { 
+                question: "What is the name of the ACC chapel?", 
+                options: ["St. Vincent Chapel", "Our Lady of Lourdes Chapel", "Holy Family Chapel", "St. Joseph Chapel"], 
+                answer: 0, 
+                explanation: "The name of the ACC chapel is 'St. Vincent Chapel'." 
+            },
+            { 
+                question: "What is the name of the ACC alumni association?", 
+                options: ["ACC Alumni Association", "Vincentian Alumni Association", "Blue and White Alumni", "ACC Graduates Society"], 
+                answer: 1, 
+                explanation: "The name of the ACC alumni association is 'Vincentian Alumni Association'." 
+            },
+            { 
+                question: "What is the name of the ACC library?", 
+                options: ["St. Vincent Library", "ACC Learning Resource Center", "Vincentian Library", "Blue and White Library"], 
+                answer: 0, 
+                explanation: "The name of the ACC library is 'St. Vincent Library'." 
+            },
+            { 
+                question: "What is the name of the ACC science building?", 
+                options: ["St. Vincent Science Building", "ACC Science Center", "Vincentian Science Hall", "Blue and White Science Building"], 
+                answer: 0, 
+                explanation: "The name of the ACC science building is 'St. Vincent Science Building'." 
+            },
+            { 
+                question: "What is the name of the ACC auditorium?", 
+                options: ["St. Vincent Auditorium", "ACC Cultural Center", "Vincentian Hall", "Blue and White Auditorium"], 
+                answer: 0, 
+                explanation: "The name of the ACC auditorium is 'St. Vincent Auditorium'." 
+            },
+            { 
+                question: "What is the name of the ACC canteen?", 
+                options: ["St. Vincent Canteen", "ACC Food Court", "Vincentian Cafe", "Blue and White Canteen"], 
+                answer: 0, 
+                explanation: "The name of the ACC canteen is 'St. Vincent Canteen'." 
+            },
+            { 
+                question: "What is the name of the ACC football field?", 
+                options: ["St. Vincent Field", "ACC Sports Field", "Vincentian Field", "Blue and White Field"], 
+                answer: 0, 
+                explanation: "The name of the ACC football field is 'St. Vincent Field'." 
+            },
+            { 
+                question: "What is the name of the ACC basketball team?", 
+                options: ["Blue Eagles", "Vincentian Knights", "ACC Warriors", "Blue and White Titans"], 
+                answer: 0, 
+                explanation: "The name of the ACC basketball team is 'Blue Eagles'." 
+            },
+            { 
+                question: "What is the name of the ACC dance troupe?", 
+                options: ["Vincentian Dancers", "ACC Dance Company", "Blue and White Dancers", "St. Vincent Dance Troupe"], 
+                answer: 0, 
+                explanation: "The name of the ACC dance troupe is 'Vincentian Dancers'." 
+            },
+            { 
+                question: "What is the name of the ACC choir?", 
+                options: ["Vincentian Chorale", "ACC Choir", "Blue and White Singers", "St. Vincent Choir"], 
+                answer: 0, 
+                explanation: "The name of the ACC choir is 'Vincentian Chorale'." 
+            },
+            { 
+                question: "What is the name of the ACC theater group?", 
+                options: ["Vincentian Theater Guild", "ACC Drama Club", "Blue and White Players", "St. Vincent Theater Group"], 
+                answer: 0, 
+                explanation: "The name of the ACC theater group is 'Vincentian Theater Guild'." 
+            },
+            { 
+                question: "What is the name of the ACC yearbook?", 
+                options: ["The Vincentian", "ACC Yearbook", "Blue and White Memories", "St. Vincent Yearbook"], 
+                answer: 0, 
+                explanation: "The name of the ACC yearbook is 'The Vincentian'." 
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        const questionElement = document.getElementById("question");
+        const optionsElement = document.getElementById("options");
+        const scoreElement = document.getElementById("score");
+        const explanationElement = document.getElementById("explanation");
+
+        function loadQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                const q = questions[currentQuestionIndex];
+                questionElement.textContent = q.question;
+                optionsElement.innerHTML = "";
+                explanationElement.textContent = "";
+                q.options.forEach((option, index) => {
+                    const button = document.createElement("button");
+                    button.textContent = option;
+                    button.onclick = () => checkAnswer(index);
+                    optionsElement.appendChild(button);
+                });
+            } else {
+                questionElement.textContent = "Game Over! You scored: " + score + " out of " + questions.length;
+                optionsElement.innerHTML = "";
+                explanationElement.textContent = "";
+            }
+        }
+
+        function checkAnswer(selectedIndex) {
+            const correctAnswer = questions[currentQuestionIndex].answer;
+            if (selectedIndex === correctAnswer) {
+                score++;
+                explanationElement.textContent = "Correct! " + (questions[currentQuestionIndex].explanation || "");
+            } else {
+                explanationElement.textContent = "Incorrect. " + (questions[currentQuestionIndex].explanation || "");
+            }
+            scoreElement.textContent = "Score: " + score;
+            setTimeout(() => {
+                currentQuestionIndex++;
+                loadQuestion();
+            }, 3000);
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        loadQuestion();
+        
+        
+    </script>
+</body>
+</html>

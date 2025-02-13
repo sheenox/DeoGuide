@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aklan Catholic College</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full screen height */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('assets/deologo.png'); /* Background image */
+            background-repeat: repeat;
+            background-size: cover; /* Make the background fill the screen */
+            padding: 20px;
+        }
+
+        img {
+            width: 30vw; /* Responsive logo size */
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 4vw; /* Responsive title size */
+            max-width: 90%;
+            color: #222222; /* Dark color */
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 500px; /* Limit button container width */
+        }
+
+        button {
+            flex: 1 1 calc(50% - 10px); /* Buttons take half width on larger screens */
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .History { background-color: #2f6d56; color: rgb(233, 228, 228); }
+        .AboutUs { background-color: #698a7b; color: white; }
+        .Map { background-color: #36423d; color: white; }
+        .MINIGames { background-color: #000000; color: rgb(255, 255, 255); }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 5vw; /* Increase title size for smaller screens */
+            }
+            img {
+                width: 50vw; /* Make the logo bigger on smaller screens */
+            }
+            button {
+                flex: 1 1 100%; /* Buttons take full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="assets/logo.png" alt="Aklan Catholic College">
+    <h1>WELCOME TO AKLAN CATHOLIC COLLEGE</h1>
+    
+    <div class="button-container">
+        <button class="AboutUs" onclick="location.href='aboutus.html'">About Us</button>
+        <button class="History" onclick="location.href='history.html'">History</button>
+        <button class="Map" onclick="location.href='Map.html'">Map</button>
+        <button class="MINIGames" onclick="location.href='minigames.html'">MINI Games</button>
+    </div>
+</body>
+</html>
