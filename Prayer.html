@@ -85,6 +85,91 @@
     
         /* Hamburger Menu Styles */
         .menu {
+            position: absolute;<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Fill in the Blank Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('assets/deologo.png');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 150px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .prayer {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .prayer h2 {
+            margin-top: 0;
+            color: #34495e;
+        }
+        .blank {
+            display: inline-block;
+            width: 100px;
+            border-bottom: 2px solid #23684d;
+            margin: 0 5px;
+            text-align: center;
+            color: #e74c3c;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 2px;
+            border-radius: 4px;
+        }
+        .score {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #23684d;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #1e563f;
+        }
+        .correct {
+            background-color: #d5f5e3 !important; /* Light green */
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .incorrect {
+            background-color: #f8d7da !important; /* Light red */
+            color: #c0392b;
+            font-weight: bold;
+        }
+        /* Hamburger Menu Styles */
+        .menu {
             position: absolute;
             top: 10px;
             left: 10px;
@@ -113,48 +198,17 @@
             background-color: #555;
         }
     </style>
-    </head>
-    <body>
-        <!-- Hamburger Menu -->
-        <button class="menu" onclick="toggleMenu()">☰</button>
-        <div class="dropdown" id="dropdownMenu">
-            <a href="minigames.html">MINI Games</a>
-            <a href="history.html">History</a>
-            <a href="map.html">Map</a>
-            <a href="AboutUs.html">About Us</a>
-               <!-- Back Button Below Options -->
-<br><br>
-</style>
-<script>
-    // Function to toggle the dropdown menu
-    function toggleMenu() {
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
-        } else {
-            dropdownMenu.style.display = "block";
-        }
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.menu')) {
-            const dropdownMenu = document.getElementById("dropdownMenu");
-            if (dropdownMenu.style.display === "block") {
-                dropdownMenu.style.display = "none";
-            }
-        }
-    };
-</script>
-</body>
-</html>
-</style>
-
-
-        </div>
-    </style>
 </head>
 <body>
+    <!-- Hamburger Menu -->
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <div class="dropdown" id="dropdownMenu">
+        <a href="minigames.html">MINI Games</a>
+        <a href="history.html">History</a>
+        <a href="map.html">Map</a>
+        <a href="AboutUs.html">About Us</a>
+    </div>
+
     <img src="assets/logo.png" alt="Logo" class="logo">
     <h1>Prayer Fill in the Blank Game</h1>
     <div class="score">Score: <span id="score">0</span></div>
@@ -163,144 +217,67 @@
     <div class="prayer">
         <h2>The Apostles' Creed</h2>
         <p>
-            I believe in God, the Father <span class="blank" contenteditable="true" data-answer="almighty">______</span>, Creator of <span class="blank" contenteditable="true" data-answer="heaven">______</span> and earth...
+            I believe in God, the Father <span class="blank" contenteditable="true" data-answer="almighty">______</span>, Creator of <span class="blank" contenteditable="true" data-answer="heaven">______</span> and earth, and in Jesus Christ, His only Son, our Lord, who was conceived by the <span class="blank" contenteditable="true" data-answer="Holy Spirit">______</span>, born of the Virgin Mary, suffered under <span class="blank" contenteditable="true" data-answer="Pontius Pilate">______</span>, was crucified, died, and was buried; He descended into <span class="blank" contenteditable="true" data-answer="hell">______</span>; on the third day He <span class="blank" contenteditable="true" data-answer="rose">______</span> again from the dead; He ascended into <span class="blank" contenteditable="true" data-answer="heaven">______</span>, and is seated at the right hand of God the Father almighty; from there He will come to judge the <span class="blank" contenteditable="true" data-answer="living">______</span> and the dead.
         </p>
-        <!-- Add the rest of the prayer... -->
+        <p>
+            I believe in the Holy Spirit, the holy <span class="blank" contenteditable="true" data-answer="Catholic">______</span> Church, the communion of <span class="blank" contenteditable="true" data-answer="saints">______</span>, the forgiveness of sins, the resurrection of the <span class="blank" contenteditable="true" data-answer="body">______</span>, and life everlasting. Amen.
+        </p>
     </div>
 
     <!-- Prayer 2: The Our Father -->
     <div class="prayer">
-        <h2>The Our Father</h2>
+        <h2>The Our Father (The Lord's Prayer)</h2>
         <p>
-            Our Father, who art in <span class="blank" contenteditable="true" data-answer="heaven">______</span>, hallowed be Thy <span class="blank" contenteditable="true" data-answer="name">______</span>...
+            Our Father, who art in <span class="blank" contenteditable="true" data-answer="heaven">______</span>, hallowed be Thy <span class="blank" contenteditable="true" data-answer="name">______</span>; Thy kingdom come; Thy will be done on <span class="blank" contenteditable="true" data-answer="earth">______</span> as it is in heaven. Give us this day our daily <span class="blank" contenteditable="true" data-answer="bread">______</span>; and forgive us our <span class="blank" contenteditable="true" data-answer="trespasses">______</span>, as we forgive those who trespass against us; and lead us not into <span class="blank" contenteditable="true" data-answer="temptation">______</span>, but deliver us from <span class="blank" contenteditable="true" data-answer="evil">______</span>. Amen.
         </p>
     </div>
- <!-- Prayer 1: The Apostles' Creed -->
- <div class="prayer">
-    <h2>The Apostles' Creed</h2>
-    <p>
-        I believe in God, the Father <span class="blank" data-answer="almighty">______</span>, Creator of <span class="blank" data-answer="heaven">______</span> and earth, and in Jesus Christ, His only Son, our Lord, who was conceived by the <span class="blank" data-answer="Holy Spirit">______</span>, born of the Virgin Mary, suffered under <span class="blank" data-answer="Pontius Pilate">______</span>, was crucified, died, and was buried; He descended into <span class="blank" data-answer="hell">______</span>; on the third day He <span class="blank" data-answer="rose">______</span> again from the dead; He ascended into <span class="blank" data-answer="heaven">______</span>, and is seated at the right hand of God the Father almighty; from there He will come to judge the <span class="blank" data-answer="living">______</span> and the dead.
-    </p>
-    <p>
-        I believe in the Holy Spirit, the holy <span class="blank" data-answer="Catholic">______</span> Church, the communion of <span class="blank" data-answer="saints">______</span>, the forgiveness of sins, the resurrection of the <span class="blank" data-answer="body">______</span>, and life everlasting. Amen.
-    </p>
-</div>
 
-<!-- Prayer 2: The Our Father -->
-<div class="prayer">
-    <h2>The Our Father (The Lord's Prayer)</h2>
-    <p>
-        Our Father, who art in <span class="blank" data-answer="heaven">______</span>, hallowed be Thy <span class="blank" data-answer="name">______</span>; Thy kingdom come; Thy will be done on <span class="blank" data-answer="earth">______</span> as it is in heaven. Give us this day our daily <span class="blank" data-answer="bread">______</span>; and forgive us our <span class="blank" data-answer="trespasses">______</span>, as we forgive those who trespass against us; and lead us not into <span class="blank" data-answer="temptation">______</span>, but deliver us from <span class="blank" data-answer="evil">______</span>. Amen.
-    </p>
-</div>
-
-<!-- Prayer 3: The Hail Mary -->
-<div class="prayer">
-    <h2>The Hail Mary</h2>
-    <p>
-        Hail Mary, full of <span class="blank" data-answer="grace">______</span>, the Lord is with thee; blessed art thou among <span class="blank" data-answer="women">______</span>, and blessed is the fruit of thy womb, <span class="blank" data-answer="Jesus">______</span>. Holy Mary, Mother of God, pray for us <span class="blank" data-answer="sinners">______</span>, now and at the hour of our <span class="blank" data-answer="death">______</span>. Amen.
-    </p>
-</div>
-
-<!-- Prayer 4: The Gloria -->
-<div class="prayer">
-    <h2>The Gloria (Glory Be)</h2>
-    <p>
-        Glory be to the <span class="blank" data-answer="Father">______</span>, and to the <span class="blank" data-answer="Son">______</span>, and to the Holy Spirit, as it was in the <span class="blank" data-answer="beginning">______</span>, is now, and ever shall be, world without <span class="blank" data-answer="end">______</span>. Amen.
-    </p>
-</div>
-
-<!-- Prayer 5: The Act of Contrition -->
-<div class="prayer">
-    <h2>The Act of Contrition</h2>
-    <p>
-        O my God, I am <span class="blank" data-answer="heartily">______</span> sorry for having offended You, and I detest all my <span class="blank" data-answer="sins">______</span>, because I dread the loss of <span class="blank" data-answer="heaven">______</span> and the pains of <span class="blank" data-answer="hell">______</span>, but most of all because they offend You, my God, who are all good and deserving of all my <span class="blank" data-answer="love">______</span>. I firmly resolve, with the help of Your <span class="blank" data-answer="grace">______</span>, to confess my sins, to do <span class="blank" data-answer="penance">______</span>, and to amend my life. Amen.
-    </p>
-</div>
-
-<!-- Prayer 6: The Memorare -->
-<div class="prayer">
-    <h2>The Memorare</h2>
-    <p>
-        Remember, O most gracious Virgin Mary, that never was it known that anyone who fled to your <span class="blank" data-answer="protection">______</span>, implored your <span class="blank" data-answer="help">______</span>, or sought your <span class="blank" data-answer="intercession">______</span>, was left unaided. Inspired by this confidence, I fly unto you, O Virgin of virgins, my <span class="blank" data-answer="Mother">______</span>. To you do I come, before you I stand, sinful and <span class="blank" data-answer="sorrowful">______</span>. O Mother of the Word Incarnate, despise not my <span class="blank" data-answer="petitions">______</span>, but in your mercy, hear and answer me. Amen.
-    </p>
-</div>
-
-<!-- Prayer 7: The Nicene Creed -->
-<div class="prayer">
-    <h2>The Nicene Creed</h2>
-    <p>
-        I believe in one God, the Father <span class="blank" data-answer="almighty">______</span>, maker of heaven and earth, of all things visible and <span class="blank" data-answer="invisible">______</span>.
-    </p>
-    <p>
-        I believe in one Lord Jesus Christ, the Only Begotten Son of God, born of the Father before all <span class="blank" data-answer="ages">______</span>. God from God, Light from Light, true God from true God, begotten, not <span class="blank" data-answer="made">______</span>, consubstantial with the Father; through Him all things were made. For us men and for our <span class="blank" data-answer="salvation">______</span>, He came down from heaven, and by the Holy Spirit was incarnate of the Virgin Mary, and became <span class="blank" data-answer="man">______</span>.
-    </p>
-    <p>
-        For our sake He was crucified under <span class="blank" data-answer="Pontius Pilate">______</span>, He suffered death and was buried, and rose again on the <span class="blank" data-answer="third">______</span> day in accordance with the Scriptures. He ascended into <span class="blank" data-answer="heaven">______</span> and is seated at the right hand of the Father. He will come again in glory to judge the <span class="blank" data-answer="living">______</span> and the dead, and His kingdom will have no <span class="blank" data-answer="end">______</span>.
-    </p>
-    <p>
-        I believe in the Holy Spirit, the Lord, the giver of <span class="blank" data-answer="life">______</span>, who proceeds from the Father and the Son, who with the Father and the Son is adored and <span class="blank" data-answer="glorified">______</span>, who has spoken through the <span class="blank" data-answer="prophets">______</span>.
-    </p>
-    <p>
-        I believe in one, holy, catholic, and <span class="blank" data-answer="apostolic">______</span> Church. I confess one <span class="blank" data-answer="baptism">______</span> for the forgiveness of sins and I look forward to the resurrection of the <span class="blank" data-answer="dead">______</span> and the life of the world to come. Amen.
-    </p>
-</div>
-
-<!-- Prayer 8: The Anima Christi -->
-<div class="prayer">
-    <h2>The Anima Christi</h2>
-    <p>
-        Soul of Christ, <span class="blank" data-answer="sanctify">______</span> me. Body of Christ, <span class="blank" data-answer="save">______</span> me. Blood of Christ, <span class="blank" data-answer="inebriate">______</span> me. Water from the side of Christ, <span class="blank" data-answer="wash">______</span> me. Passion of Christ, <span class="blank" data-answer="strengthen">______</span> me. O good Jesus, hear me. Within your wounds, <span class="blank" data-answer="hide">______</span> me. Never permit me to be <span class="blank" data-answer="separated">______</span> from you. From the evil one, <span class="blank" data-answer="protect">______</span> me. At the hour of my death, <span class="blank" data-answer="call">______</span> me and bid me come to you, that with your saints I may <span class="blank" data-answer="praise">______</span> you forever and ever. Amen.
-    </p>
-</div>
-
-<!-- Prayer 9: The Angelus -->
-<div class="prayer">
-    <h2>The Angelus</h2>
-    <p>
-        The Angel of the Lord declared to Mary: And she conceived of the <span class="blank" data-answer="Holy Spirit">______</span>. Hail Mary...
-    </p>
-    <p>
-        Behold the handmaid of the Lord: Be it done unto me according to Your <span class="blank" data-answer="word">______</span>. Hail Mary...
-    </p>
-    <p>
-        And the Word was made <span class="blank" data-answer="Flesh">______</span>: And dwelt among us. Hail Mary...
-    </p>
-    <p>
-        Pray for us, O Holy Mother of God, that we may be made worthy of the promises of <span class="blank" data-answer="Christ">______</span>. Let us pray: Pour forth, we beseech You, O Lord, Your <span class="blank" data-answer="grace">______</span> into our hearts; that we, to whom the Incarnation of Christ, Your Son, was made known by the message of an <span class="blank" data-answer="angel">______</span>, may by His Passion and Cross be brought to the glory of His <span class="blank" data-answer="Resurrection">______</span>, through the same Christ Our Lord. Amen.
-    </p>
-</div>
-
-<!-- Prayer 10: The Prayer to Saint Michael -->
-<div class="prayer">
-    <h2>The Prayer to Saint Michael</h2>
-    <p>
-        Saint Michael the Archangel, defend us in <span class="blank" data-answer="battle">______</span>. Be our defense against the wickedness and <span class="blank" data-answer="snares">______</span> of the devil. May God rebuke him, we humbly pray; and do thou, O Prince of the heavenly hosts, by the power of God, cast into <span class="blank" data-answer="hell">______</span> Satan and all the evil spirits who prowl about the world seeking the ruin of <span class="blank" data-answer="souls">______</span>. Amen.
-    </p>
-</div>
-
-<button onclick="checkAnswers()">Check Answers</button>
-
-<script>
-    let score = 0;
-
-    function checkAnswers() {
-        const blanks = document.querySelectorAll('.blank');
-        blanks.forEach(blank => {
-            const userAnswer = blank.textContent.trim().toLowerCase();
-            const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
-            if (userAnswer === correctAnswer) {
-                blank.style.backgroundColor = '#d5f5e3'; // Light green for correct
-                score++;
-            } else {
-                blank.style.backgroundColor = '#f8d7da'; // Light red for incorrect
-            }
-        });
-        document.getElementById('score').textContent = score;
-    }
-</script>
-</body>
-</html>     
     <!-- Add more prayers as needed... -->
+
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <script>
+        let score = 0;
+
+        function checkAnswers() {
+            score = 0; // Reset score before checking
+            const blanks = document.querySelectorAll('.blank');
+            blanks.forEach(blank => {
+                const userAnswer = blank.textContent.trim().toLowerCase();
+                const correctAnswer = blank.getAttribute('data-answer').toLowerCase();
+                if (userAnswer === correctAnswer) {
+                    blank.classList.add('correct');
+                    blank.classList.remove('incorrect');
+                    score++;
+                } else {
+                    blank.classList.add('incorrect');
+                    blank.classList.remove('correct');
+                }
+            });
+            document.getElementById('score').textContent = score;
+        }
+
+        // Function to toggle the dropdown menu
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById("dropdownMenu");
+            if (dropdownMenu.style.display === "block") {
+                dropdownMenu.style.display = "none";
+            } else {
+                dropdownMenu.style.display = "block";
+            }
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu')) {
+                const dropdownMenu = document.getElementById("dropdownMenu");
+                if (dropdownMenu.style.display === "block") {
+                    dropdownMenu.style.display = "none";
+                }
+            }
+        };
+    </script>
+</body>
+</html>
 
   
